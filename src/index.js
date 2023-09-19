@@ -48,7 +48,6 @@ function App() {
           description="NEW YORK, Feb 13 — Tesla Chief Executive Elon Musk often touts the arrival of completely autonomous vehicles as imminent, but exactly how close that future is for the electric automaker remains murky. "
           link="https://www.malaymail.com/news/drive/2022/02/13/musk-pushes-the-boundaries-in-tesla-autonomous-campaign/2041263"
         />
-        <button className="moreButton">more stories</button>
       </div>
     </News>
   );
@@ -69,6 +68,14 @@ function Title(props) {
 }
 
 function Story(props) {
+
+  function handleDelete(e) {
+    // alert(e.target === e.currentTarget);
+    if (e.target !== e.currentTarget) {
+      e.currentTarget.remove();
+    }
+  }
+
   let image;
 
   if (!props.image) {
@@ -77,7 +84,7 @@ function Story(props) {
     image = props.image;
   }
   return (
-    <div className="storyContainer">
+    <div className="storyContainer" onClick={handleDelete}>
       <div className="storySectionTop">
         <img 
           className="image" 
@@ -86,11 +93,16 @@ function Story(props) {
           width={300}
           height={200}
         />
-        <div >
+        <div>
           <a className="newsArticle" href={props.link}>
             <p >{props.article}</p>
           </a>
         </div>
+        <span 
+          onClick={handleDelete}
+          className="closeButton"
+        >x</span>
+        
       </div>
       <div className="newsImage">
         <image>
@@ -105,9 +117,6 @@ function Story(props) {
           By: {props.author}
         </p>
       </div>
-      {/* <a >
-        {props.link}
-      </a> */}
     </div>
   );
 }

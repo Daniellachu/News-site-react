@@ -98,15 +98,13 @@ a:active {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.moreButton{
-  background-color:  rgb(37 37 37);
-  border-radius: 8px;
-  border-width: 0;
-  color: #ffffff;
+.closeButton{
+  font-size: 25px;
+  border-radius: 30px;
+  width: 10px;
+  height: 10px;
+  color: #ffff;
+  padding: 10px;
+  font-family: 'Roboto Black', sans-serif;
   cursor: pointer;
-  padding: 15px;
-}
-
-.moreButton:hover{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
 }
